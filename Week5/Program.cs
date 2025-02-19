@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Diagnostics.Eventing.Reader;
@@ -12,19 +12,6 @@ namespace Week5
     {
         public static void Main(string[] args)
         {
-
-            //Print out the options for the user
-            Console.WriteLine("1. Add a grade");
-            Console.WriteLine("2. Remove a grade");
-            Console.WriteLine("3. Display all grades");
-            Console.WriteLine("4. Display average for all added grades");
-            Console.WriteLine("5. Exit");
-
-            Console.WriteLine("Please make a choice");
-            //Reads users choice
-            int choice = Convert.ToInt32(Console.ReadLine());
-
-
             //Create a list to store the grades
             List<int> grades = new List<int>();
             //Create a switch statement to handle the user's choice
@@ -38,6 +25,7 @@ namespace Week5
                 Console.WriteLine("5. Exit");
 
                 Console.WriteLine("Please make a choice");
+                int choice = Convert.ToInt32(Console.ReadLine());
 
                 switch (choice)
                 {
@@ -70,17 +58,17 @@ namespace Week5
                         double average = grades.Average();
                         Console.WriteLine(average);
                         Console.WriteLine("Want to continue? (Y/N)");
-                        string user = Convert.ToString(Console.ReadLine());
                         break;
 
                     case 5:
                         Console.WriteLine("Goodbye!");
                         break;
                 }
-            } while (user != 'N');
+            } while (choice != 5);
         }
     }
 }
+
 
 
 
